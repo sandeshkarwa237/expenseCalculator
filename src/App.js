@@ -39,7 +39,10 @@ const App = (props) => {
   const getTabDetails = () => {
     return groupDetails.map((listDetails, index) => {
       return (
-        <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+        <li
+          key={listDetails.groupName + index}
+          className="-mb-px mr-2 last:mr-0 flex-auto text-center"
+        >
           <a
             className={
               "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal bg-gradient-to-l " +
@@ -65,7 +68,10 @@ const App = (props) => {
       const { groupName, peopleList, expenseList, overallDetails } =
         listDetails;
       return (
-        <div className={selectedTab === index ? "block" : "hidden"}>
+        <div
+          key={groupName}
+          className={selectedTab === index ? "block" : "hidden"}
+        >
           <Header
             peopleList={peopleList}
             headerText={groupName}
