@@ -1,13 +1,26 @@
-import { GET_EXPENSE_LIST, UPDATE_EXPENSE_LIST } from "./expenseList.types";
+import {
+  UPDATE_EXPENSE_LIST,
+  UPDATE_TAB,
+  CALCULATE_EXPENSE,
+} from "./expenseList.types";
 
-// Acion used for fetching the expense list
-export const getExpenseList = () => {
+// Action used for calculating the overall expense and each's share
+export const calculateExpense = (overallExpenseList) => {
   return {
-    type: GET_EXPENSE_LIST,
+    type: CALCULATE_EXPENSE,
+    payload: overallExpenseList,
   };
 };
 
-// Acion used for updating the existing expense list
+// Action used for tab change
+export const updateTab = (index) => {
+  return {
+    type: UPDATE_TAB,
+    payload: index,
+  };
+};
+
+// Action used for updating the existing expense list
 export const updateExpenseList = (list) => {
   return {
     type: UPDATE_EXPENSE_LIST,

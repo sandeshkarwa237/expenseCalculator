@@ -1,5 +1,4 @@
 // Format the date in DD/MM/YYYY format
-
 const formatDate = (dateSelected) => {
   var dd = dateSelected.getDate();
   var mm = dateSelected.getMonth() + 1;

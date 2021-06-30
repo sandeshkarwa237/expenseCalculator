@@ -30,7 +30,7 @@ const Table = (props) => {
     return tableContent.map((data, parentIndex) => {
       return (
         <tbody>
-          <tr key={parentIndex} className="border-b border-indigo-400">
+          <tr key={parentIndex} className="border bg-gray-200">
             {tableContentKeys.map((tableKey, keyIndex) => {
               return (
                 <td key={tableKey[keyIndex] + keyIndex} className="px-4 py-3">
@@ -47,17 +47,15 @@ const Table = (props) => {
   return (
     <div className="py-8">
       <h1 className="flex-grow text-2xl text-gray-900">{title}</h1>
-      <table className="rounded-t-lg mt-5 w-5/6 mx-auto text-gray-100 bg-gradient-to-l from-indigo-500 to-indigo-800">
-        <thead className="border-b-2 border-indigo-300">
+      <table className="mt-5 w-5/6 mx-auto border">
+        <thead className="text-gray-100 bg-gradient-to-l from-indigo-500 to-indigo-800">
           {getTableHeader()}
         </thead>
         {!isEmptyData && getTableContent()}
       </table>
       {/* Displaying message when no content is available in table */}
       {isEmptyData && (
-        <div className="rounded-b-lg w-5/6 mx-auto p-4 text-gray-100 bg-gradient-to-l from-indigo-500 to-indigo-800">
-          {emptyTableMessage}
-        </div>
+        <div className="w-5/6 mx-auto p-4 bg-gray-200">{emptyTableMessage}</div>
       )}
     </div>
   );

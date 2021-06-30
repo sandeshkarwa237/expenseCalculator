@@ -13,15 +13,16 @@ const Header = (props) => {
   return (
     <div className="w-5/6 mb-10 divide-y divide-fuchsia-300 flex flex-col sm:flex-row sm:items-center mx-auto ">
       <h1 className="flex-grow sm:text-3xl text-2xl text-gray-900">
-        Expense Tracker
+        {props.headerText}
       </h1>
       <button
         onClick={toggleModal}
-        className="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0"
+        className="flex-shrink-0 text-white py-2 px-8 focus:outline-none text-lg mt-10 sm:mt-0 bg-gradient-to-l from-indigo-500 to-indigo-800"
       >
         Add Expense
       </button>
       <AddExpense
+        peopleList={props.peopleList}
         modalIsOpen={modalIsOpen}
         toggleModal={toggleModal}
         addExpense={props.addExpense}

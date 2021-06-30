@@ -1,15 +1,14 @@
 import React, { useCallback } from "react";
-import { peopleList } from "../../../static/peopleList";
 
 const Dropdown = (props) => {
-  const { selectedValue, onChange, id, title } = props;
+  const { selectedValue, onChange, id, title, options } = props;
 
   // Dynamic rendering for people's name
   const getOptionData = useCallback(() => {
-    return peopleList.map((optionText) => {
+    return options.map((optionText) => {
       return <option value={optionText}>{optionText}</option>;
     });
-  }, []);
+  }, [options]);
 
   return (
     <>

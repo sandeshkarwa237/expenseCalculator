@@ -18,7 +18,7 @@ const customStyles = {
 };
 
 const AddExpense = (props) => {
-  const { modalIsOpen, toggleModal, addExpense } = props;
+  const { modalIsOpen, toggleModal, addExpense, peopleList } = props;
   // Initializing field values for popup
   const [popupData, updatePopupData] = useState({
     description: "",
@@ -96,6 +96,7 @@ const AddExpense = (props) => {
           </div>
           <div className="w-full sm:w-1/3 mt-2 sm:mt-0">
             <Dropdown
+              options={peopleList}
               title="Paid By"
               selectedValue={popupData.personPaid}
               onChange={updateFieldData}
